@@ -1,0 +1,37 @@
+#card-img {
+  height: 150px !important;
+  mix-blend-mode: darken;
+}
+#sidebar {
+  width: 300px;
+  top: 56px;
+
+  /* display: none !important; */
+}
+.offcanvas-backdrop.show {
+  opacity: 0;
+  display: none !important;
+}
+/* #m-300 {
+  margin-left: 300px;
+} */
+
+#img-link {
+  align-self: stretch;
+}
+#product-img {
+  width: 300px !important;
+  height: 200px !important;
+}
+@media screen and (min-width: 768px) {
+  #sidebar {
+    display: flex !important;
+    visibility: visible !important;
+    transform: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  #sidebar {
+    top: 70px;
+  }
+}

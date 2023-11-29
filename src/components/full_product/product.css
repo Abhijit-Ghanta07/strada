@@ -1,0 +1,15 @@
+#side-img {
+  width: 60px !important;
+  height: 50px !important;
+  cursor: pointer;
+}
+#product-img {
+  width: 300px !important;
+  height: 200px !important;
+}
+#side-img-con {
+  flex: 0 !important;
+  flex-basis: 100px !important;
+  align-items: center;
+  justify-content: center;
+}

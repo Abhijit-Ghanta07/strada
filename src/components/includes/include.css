@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+
+#logo {
+  font-family: "Roboto Slab", serif;
+}
+
+#header-icons {
+  width: 30px;
+  height: 30px;
+  padding-right: 5px;
+}
+
+#slider-img {
+  height: 400px !important;
+  object-fit: fill;
+  object-position: center center;
+}
