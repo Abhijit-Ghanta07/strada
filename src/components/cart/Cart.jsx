@@ -19,7 +19,7 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
   const { phones, laptops } = useSelector((state) => state.product);
   const [products, setProducts] = useState([]);
-
+  const [price, setPrice] = useState(0);
   function filterItems() {
     let phoneItems = phones.filter((item) => {
       return cartItems.includes(item.id);
@@ -43,15 +43,23 @@ const Cart = () => {
   //     setProducts((prev) => [...prev, res.data]);
   //   }
   // }
+  function calculatePrice() {
+    let totalPrice = 0;
+    if (products) {
+      products.map((prevItem) => {
+        totalPrice += prevItem.price;
+      });
+      setPrice(totalPrice);
+    }
+  }
 
   useEffect(() => {
     filterItems();
-    console.log(cartItems);
-    console.log(products);
   }, [cartItems]);
 
-  const item = product;
-  const [price, setPrice] = useState(100);
+  useEffect(() => {
+    calculatePrice();
+  }, [products]);
   return (
     <div className="cart">
       <Container fluid="lg">
@@ -65,13 +73,16 @@ const Cart = () => {
               <CardTitle className="text-secondary">Price Details</CardTitle>
               <CardBody>
                 <CardText className="d-flex justify-content-between">
-                  <span>Price(3items):</span> <span>{price}</span>
+                  <span>Price({cartItems.length}items):</span>{" "}
+                  <span>{price}</span>
                 </CardText>
                 <CardText className="d-flex justify-content-between">
-                  <span>Discount:</span> <span>{price}</span>
+                  <span>Discount:</span>{" "}
+                  <span className="text-success">20%</span>
                 </CardText>
                 <CardText className="d-flex justify-content-between">
-                  <span>Delivery chanrge:</span> <span>{price}</span>
+                  <span>Delivery charge:</span>{" "}
+                  <span className="text-success">Free Delivery</span>
                 </CardText>
                 <hr />
                 <CardText className="d-flex justify-content-between">

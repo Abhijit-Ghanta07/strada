@@ -29,9 +29,6 @@ function ProductList() {
   //   const res = await fetchData("category/laptops");
   //   setLaptops(res.data.products);
   // }
-  useEffect(() => {
-    console.log(phones.laptops);
-  }, [phones, laptops]);
   return (
     <>
       <Container fluid className="mt-3 p-0">

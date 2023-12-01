@@ -17,7 +17,7 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { BiSortUp } from "react-icons/bi";
 import fetchData from "../../api/api.js";
-import "./product.css";
+import CatagoryProduct from "./CatagoryProduct.jsx";
 const CategoryList = () => {
   const { cata } = useParams();
   const [offShow, setOffShow] = useState(false);
@@ -31,7 +31,6 @@ const CategoryList = () => {
   useEffect(() => {
     getData(`category/${cata}`);
   }, [cata]);
-  console.log(products);
   return (
     <>
       <Container fluid>
@@ -85,49 +84,7 @@ const CategoryList = () => {
                     {products &&
                       products.map((product, i) => {
                         return (
-                          <>
-                            <Stack direction="horizontal" gap={2}>
-                              {/* <div
-                                className="d-flex gap-1 flex-column"
-                                style={{ width: "80px" }}
-                              >
-                                {product?.images.map((img) => {
-                                  {
-                                    return (
-                                      <Image
-                                        src={img}
-                                        alt="product img"
-                                        thumbnail
-                                        id="side-img"
-                                        onClick={() => {
-                                          setCurrentimg(img);
-                                        }}
-                                      />
-                                    );
-                                  }
-                                })}
-                              </div> */}
-                              <Link
-                                id="img-link"
-                                to={`/product/${product?.id}`}
-                              >
-                                <Image
-                                  src={product?.thumbnail}
-                                  thumbnail
-                                  id="product-img"
-                                />
-                              </Link>
-
-                              <Stack>
-                                <p>{product.title}</p>
-                                <p>
-                                  {/* {product?.brand} */}
-                                  <Badge bg="success">{product?.rating}</Badge>
-                                </p>
-                              </Stack>
-                            </Stack>
-                            <hr className="hr" />
-                          </>
+                          <CatagoryProduct product={product} key={product.id} />
                         );
                       })}
                   </Stack>

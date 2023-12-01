@@ -10,8 +10,6 @@ import {
 
 const GetData = () => {
   const dispatch = useDispatch();
-  const { fetching, fetchDone } = useSelector((state) => state.product);
-  console.log(fetching, fetchDone);
   useEffect(() => {
     async function getData() {
       dispatch(setfetching());

@@ -16,7 +16,6 @@ import { deleteFromCart } from "../../store/Cart.js";
 const CartProduct = ({ item }) => {
   const dispatch = useDispatch();
   function handleClick() {
-    console.log(this);
     dispatch(deleteFromCart({ id: this }));
   }
   return (

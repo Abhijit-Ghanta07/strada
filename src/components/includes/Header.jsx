@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MdPersonOutline } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import {
@@ -38,13 +38,13 @@ function Header() {
                   return;
                 }
                 return (
-                  <NavDropdown.Item
-                    href={cata}
+                  <Link
+                    to={`${cata}`}
                     key={i}
-                    className="text-uppercase"
+                    className="d-block p-1 text-decoration-none text-uppercase text-black"
                   >
                     {cata}
-                  </NavDropdown.Item>
+                  </Link>
                 );
               })}
             </NavDropdown>
